@@ -38,4 +38,24 @@ describe("Thermostat", function(){
     expect(thermostat.getTemperature()).toBe(20);
   });
 
+  it('shows when energy use is low', function(){
+    thermostat.down();
+    thermostat.down();
+    thermostat.down();
+    expect(thermostat.getEnergyUse()).toBe("low-usage");
+  });
+
+  it('shows when energy use is medium', function(){
+    expect(thermostat.getEnergyUse()).toBe("medium-usage");
+  });
+
+  it('shows when energy use is low', function(){
+    thermostat.up();
+    thermostat.up();
+    thermostat.up();
+    thermostat.up();
+    thermostat.up();
+    thermostat.up();
+    expect(thermostat.getEnergyUse()).toBe("high-usage");
+  });
 });
