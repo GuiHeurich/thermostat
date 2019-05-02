@@ -3,7 +3,7 @@ describe("Thermostat", function(){
   var thermostat;
 
   beforeEach(function(){
-    thermostat = new Thermostat(20);
+    thermostat = new Thermostat();
   })
 
   it("starts at 20 degrees", function(){
@@ -24,4 +24,18 @@ describe("Thermostat", function(){
     for (var i = 0; i < 10; i++ ) { thermostat.down(); };
     expect(thermostat.down()).toBe("Error: Minimum Temperature is 10 degrees");
   });
+
+  it("prevents from increasing to more than 25 degrees if power saving is on", function(){
+    for (var i = 0; i < 5; i++ ) { thermostat.up(); };
+    expect(thermostat.up()).toBe("Error: Maximum temperature reached");
+  });
+
+  it("resets the temperature to 20 degrees", function(){
+    thermostat.up();
+    thermostat.up();
+    thermostat.up();
+    thermostat.resetTemperature();
+    expect(thermostat.getTemperature()).toBe(20);
+  });
+
 });
