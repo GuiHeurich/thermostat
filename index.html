@@ -2,22 +2,31 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <script src="jasmine/src/thermostat.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title></title>
   </head>
   <body>
-    <button id="temperature">Current Temperature</button>
-    <button id="energyUse">Energy Use</button>
-    <button id="powerSavingMode">Power Saving Mode</button>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="interface.js"></script>
+
+    <center>
+    <label id="temperature" >Current Temperature</label>
+    <label id="energyUse">Energy Use</label>
+    <label id="powerSavingMode">Power Saving Mode</label>
     <br><br>
-    <button id="getTemperature"> Get Temperature</button>
-    <button id="getEnergyUse"> Get Energy Use</button>
-    <button id="getPowerSavingMode"> Power Saving Mode </button>
+    <br><br>
+    <br><br>
     <button id="setSavingModeOn"> Saving Mode On</button>
     <button id="setSavingModeOff"> Saving Mode Off</button>
     <button id="resetTemperature"> Reset Temperature</button>
+    <br><br>
+    <br><br>
     <button id="up"> Up </button>
     <button id="down"> Down</button>
     <br><br>
+    </center>
+
+    <script src="jasmine/src/thermostat.js"></script>
+    <script src="interface.js"></script>
   </body>
 </html>
