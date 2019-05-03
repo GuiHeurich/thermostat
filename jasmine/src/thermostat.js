@@ -1,7 +1,7 @@
 function Thermostat() {
   this._temperature = 20;
-  this._powerSavingMode = true;
-  this._energyUse = "low-usage";
+  this._powerSavingMode = "Power Saving Mode On";
+  this._energyUse = "";
 };
 
 Thermostat.prototype.getTemperature = function () {
@@ -10,11 +10,11 @@ Thermostat.prototype.getTemperature = function () {
 
 Thermostat.prototype.getEnergyUse = function () {
   if(this.getTemperature() < 18){
-    return 'low-usage';
+    return this._energyUse = 'low-usage';
   } else if(this.getTemperature() < 25) {
-    return 'medium-usage';
+    return this._energyUse = 'medium-usage';
   };
-  return 'high-usage';
+  return this._energyUse = 'high-usage';
 };
 
 Thermostat.prototype.getPowerSavingMode = function () {
@@ -22,11 +22,11 @@ Thermostat.prototype.getPowerSavingMode = function () {
 };
 
 Thermostat.prototype.setSavingModeOff = function () {
-  this._powerSavingMode = false;
+  this._powerSavingMode = "Power Saving Mode Off";
 };
 
 Thermostat.prototype.setSavingModeOn = function () {
-  this._powerSavingMode = true;
+  this._powerSavingMode = "Power Saving Mode On";
 };
 
 Thermostat.prototype.up = function () {

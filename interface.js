@@ -7,10 +7,8 @@ $(document).ready(function() {
   function updateTemperature() {
   $('#temperature').text(thermostat.getTemperature());
   $('#temperature').attr('class', thermostat.getEnergyUse());
-  }
-
-  function updatePowerSavingMode() {
   $('#powerSavingMode').text(thermostat.getPowerSavingMode());
+  $('#energyUse').text(thermostat.getEnergyUse());
   }
 
   $('#up').click(function(){
@@ -30,12 +28,12 @@ $(document).ready(function() {
 
   $('#setSavingModeOn').click(function(){
     thermostat.setSavingModeOn();
-    updatePowerSavingMode();
+    updateTemperature();
   });
 
   $('#setSavingModeOff').click(function(){
     thermostat.setSavingModeOff();
-    updatePowerSavingMode();
+    updateTemperature();
   });
 
 });
